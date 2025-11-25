@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Bali - Jelajahi Pulau Dewata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" id="header">
+        <div class="logo">Bali</div>
+        <nav class="main-nav">
+            <a href="#home" class="nav-link" data-section="home">Beranda</a>
+            <a href="#destinations" class="nav-link" data-section="destinations">Destinasi</a>
+            <a href="#culture" class="nav-link" data-section="culture">Budaya</a>
+            <a href="#contact" class="nav-link" data-section="contact">Pesan Tur</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section section">
+            <div id="video-background">
+                <div id="youtube-player"></div> 
+            </div>
+            
+            <div class="video-overlay"></div>
+
+            <div class="hero-content">
+                <h1>Pulau Dewata Bali</h1>
+                <p>Temukan keindahan alam, spiritualitas, dan kedamaian Pulau Bali.</p>
+            </div>
+        </section>
+
+        <section id="destinations" class="content-section section">
+            <div class="container">
+                <h2 class="section-heading animate-on-scroll">Destinasi Pilihan Kami</h2>
+                <div class="card-gallery">
+                    
+                    <div class="info-card animate-on-scroll" onclick="openModal('uluwatu')">
+                        <div class="card-image" style="background-image: url('Uluwatu.webp');"></div>
+                        <div class="card-content">
+                            <h3>Uluwatu</h3>
+                            <p>Pura megah di atas tebing dengan tarian Kecak dan pemandangan sunset yang indah.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll" onclick="openModal('tegalalang')">
+                        <div class="card-image" style="background-image: url('Tegalalang.jpg');"></div>
+                        <div class="card-content">
+                            <h3>Tegalalang, Ubud</h3>
+                            <p>Sawah terasering yang menjadi ikonis dari Tegalalang, Ubud.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll" onclick="openModal('batur')">
+                        <div class="card-image" style="background-image: url('Gunung\ batur.jpeg');"></div>
+                        <div class="card-content">
+                            <h3>Gunung Batur</h3>
+                            <p>Pengalaman mendaki gunung berapi aktif dengan hadiah sunrise yang tak terlupakan di Kintamani.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card animate-on-scroll" onclick="openModal('seminyak')">
+                        <div class="card-image" style="background-image: url('Seminyak.jpg');"></div>
+                        <div class="card-content">
+                            <h3>Seminyak & Canggu</h3>
+                            <p>Pantai berpasir hitam dengan suasana hipster, kafe, dan spot selancar yang ramai dan trendi.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll" onclick="openModal('nusa')">
+                        <div class="card-image" style="background-image: url('Nusa\ penida.jpg');"></div>
+                        <div class="card-content">
+                            <h3>Nusa Penida</h3>
+                            <p>Pulau terdekat yang terkenal dengan pemandangan tebing Kelingking Beach dan perairan biru jernih.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card animate-on-scroll" onclick="openModal('tirta')">
+                        <div class="card-image" style="background-image: url('Tirta\ empul.jpg');"></div>
+                        <div class="card-content">
+                            <h3>Tirta Empul</h3>
+                            <p>Pura mata air suci di Tampaksiring. Rasakan pengalaman ritual pembersihan diri (**Melukat**).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="culture" class="content-section section">
+            <div class="container">
+                <h2 class="section-heading animate-on-scroll">Seni & Budaya Bali</h2>
+                <div class="culture-text animate-on-scroll">
+                    <p>Budaya Bali sangat kental dengan agama Hindu Dharma, tercermin dari ribuan pura, tari-tarian sakral, dan upacara adat harian yang dikenal sebagai Canang Sari.</p>
+                    <p>Setiap aspek kehidupan di Bali diwarnai oleh nilai-nilai spiritual, mulai dari arsitektur rumah hingga seni pahat dan ukiran kayu yang mendunia. Pengunjung dapat menyaksikan berbagai ritual dan perayaan yang otentik, menjadi bagian dari pengalaman yang tak terlupakan.</p>
+                    <p>Salah satu tarian paling terkenal adalah Tari Kecak, sebuah ritual dramatis yang menceritakan kisah Ramayana.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section section">
+            <div class="container">
+                <h2 class="section-heading">Pesan Tur Anda</h2>
+                
+                <form id="tour-form"> 
+                    <p>Isi formulir di bawah ini untuk mendapatkan penawaran tur terbaik dan sesuaikan petualangan Anda di Bali.</p>
+                    
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Nama Lengkap" required>
+                        <input type="email" id="email" placeholder="Email Aktif" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="date" id="travel-date" placeholder="Tanggal Perjalanan" required>
+                        <input type="number" id="participants" placeholder="Jumlah Peserta" required min="1" value="1">
+                    </div>
+                    
+                    <select id="tour-package" required>
+                        <option value="">-- Pilih Paket Tur --</option>
+                        <option value="ubud-cultural">Ubud Cultural Tour (Full Day)</option>
+                        <option value="beach-sunset">Beach & Sunset Tour (Half Day)</option>
+                        <option value="mountain-trekking">Mountain Trekking Batur (Sunrise)</option>
+                        <option value="island-hopping">Nusa Penida Trip (One Day)</option>
+                        <option value="custom">Permintaan Tur Khusus</option>
+                    </select>
+                    
+                    <textarea id="message" placeholder="Permintaan Khusus (lokasi penjemputan, preferensi akomodasi, atau detail lain)..."></textarea>
+                    
+                    <button type="submit" class="cta-button">Kirim Permintaan Sekarang</button>
+                    
+                    <p id="form-feedback" class="feedback-message hidden"></p> 
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="destination-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-image" id="modal-image"></div>
+            <div class="modal-body">
+                <h2 id="modal-title"></h2>
+                <div id="modal-description"></div>
+                <div class="modal-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="modal-location"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="modal-duration"></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span id="modal-price"></span>
+                    </div>
+                </div>
+                <div class="modal-highlights">
+                    <h3>Highlights</h3>
+                    <ul id="modal-highlights-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Hak Cipta &copy;Kanisian 2025 Kelompok Bertus. Dirancang dengan ❤️ di Pulau Dewata.</p>
+    </footer>
+
+    <script src="Bali.js"></script>
+</body>
+</html>
